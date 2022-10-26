@@ -1,0 +1,163 @@
+
+
+============================== 2022-10-26 14:49:03.147247 | 3ae43f9a-71ee-4197-a835-7a1c5851b53b ==============================
+[0m14:49:03.147247 [info ] [MainThread]: Running with dbt=1.3.0
+[0m14:49:03.149171 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\tkirschke\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'datavault4dbt-snowflake-demo', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m14:49:03.149970 [debug] [MainThread]: Tracking: tracking
+[0m14:49:03.152985 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017E3328E490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017E33292F40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017E33292520>]}
+[0m14:49:22.726852 [debug] [MainThread]: Starter project path: c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\include\starter_project
+[0m14:49:26.232704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017E332BB130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017E332BB4F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017E332BB0A0>]}
+[0m14:49:26.232704 [debug] [MainThread]: Flushing usage events
+[0m14:49:26.785397 [error] [MainThread]: Encountered an error:
+deprecated() got an unexpected keyword argument 'name'
+[0m14:49:26.798991 [error] [MainThread]: Traceback (most recent call last):
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\main.py", line 135, in main
+    results, succeeded = handle_and_check(args)
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\main.py", line 198, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\main.py", line 245, in run_from_args
+    results = task.run()
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\task\init.py", line 332, in run
+    self.create_profile_from_target(adapter, profile_name=project_name)
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\task\init.py", line 200, in create_profile_from_target
+    load_plugin(adapter)
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\adapters\factory.py", line 201, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\adapters\factory.py", line 56, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\tkirschke\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 790, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\adapters\snowflake\connections.py", line 17, in <module>
+    import snowflake.connector
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\__init__.py", line 16, in <module>
+    from .connection import SnowflakeConnection
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\connection.py", line 24, in <module>
+    from . import errors, proxy
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\errors.py", line 19, in <module>
+    from .telemetry_oob import TelemetryService
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\telemetry_oob.py", line 19, in <module>
+    from .vendored import requests
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\vendored\requests\__init__.py", line 119, in <module>
+    from ..urllib3.contrib import pyopenssl
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\vendored\urllib3\contrib\pyopenssl.py", line 50, in <module>
+    import OpenSSL.SSL
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\OpenSSL\__init__.py", line 8, in <module>
+    from OpenSSL import SSL, crypto
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\OpenSSL\SSL.py", line 19, in <module>
+    from OpenSSL.crypto import (
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\OpenSSL\crypto.py", line 3224, in <module>
+    utils.deprecated(
+TypeError: deprecated() got an unexpected keyword argument 'name'
+
+
+
+============================== 2022-10-26 14:49:36.287864 | 6902ed2d-aa12-4c4d-9be5-a8879fd79320 ==============================
+[0m14:49:36.287864 [info ] [MainThread]: Running with dbt=1.3.0
+[0m14:49:36.289172 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\tkirschke\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m14:49:36.289172 [debug] [MainThread]: Tracking: tracking
+[0m14:49:36.290184 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1B170640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1B1702B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1B170D30>]}
+[0m14:49:36.300221 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:49:36.307630 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:49:36.313317 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:49:36.320121 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:49:36.607796 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1B1875B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1B1878E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1B187C10>]}
+[0m14:49:36.608287 [debug] [MainThread]: Flushing usage events
+[0m14:49:37.121181 [error] [MainThread]: Encountered an error:
+deprecated() got an unexpected keyword argument 'name'
+[0m14:49:37.130946 [error] [MainThread]: Traceback (most recent call last):
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\main.py", line 135, in main
+    results, succeeded = handle_and_check(args)
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\main.py", line 198, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\main.py", line 245, in run_from_args
+    results = task.run()
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\task\debug.py", line 109, in run
+    self.test_configuration()
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\task\debug.py", line 281, in test_configuration
+    profile_status = self._load_profile()
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\task\debug.py", line 252, in _load_profile
+    profile: Profile = Profile.render_from_args(self.args, renderer, profile_name)
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\config\profile.py", line 426, in render_from_args
+    return cls.from_raw_profiles(
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\config\profile.py", line 392, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\config\profile.py", line 346, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\config\profile.py", line 179, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\adapters\factory.py", line 201, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\adapters\factory.py", line 56, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "C:\Users\tkirschke\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 790, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\adapters\snowflake\__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\dbt\adapters\snowflake\connections.py", line 17, in <module>
+    import snowflake.connector
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\__init__.py", line 16, in <module>
+    from .connection import SnowflakeConnection
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\connection.py", line 24, in <module>
+    from . import errors, proxy
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\errors.py", line 19, in <module>
+    from .telemetry_oob import TelemetryService
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\telemetry_oob.py", line 19, in <module>
+    from .vendored import requests
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\vendored\requests\__init__.py", line 119, in <module>
+    from ..urllib3.contrib import pyopenssl
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\snowflake\connector\vendored\urllib3\contrib\pyopenssl.py", line 50, in <module>
+    import OpenSSL.SSL
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\OpenSSL\__init__.py", line 8, in <module>
+    from OpenSSL import SSL, crypto
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\OpenSSL\SSL.py", line 19, in <module>
+    from OpenSSL.crypto import (
+  File "c:\users\tkirschke\.vscode\datavault4dbt-snowflake-demo\venv\datavault4dbt-snowflake-demo\lib\site-packages\OpenSSL\crypto.py", line 3224, in <module>
+    utils.deprecated(
+TypeError: deprecated() got an unexpected keyword argument 'name'
+
+
+
+============================== 2022-10-26 14:55:50.029925 | ec2364f7-fcea-497f-8391-5646cd904e88 ==============================
+[0m14:55:50.029925 [info ] [MainThread]: Running with dbt=1.3.0
+[0m14:55:50.029925 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\tkirschke\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m14:55:50.029925 [debug] [MainThread]: Tracking: tracking
+[0m14:55:50.030999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188458AECD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188458AE4C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188458B2520>]}
+[0m14:55:50.041735 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:55:50.047477 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:55:50.052479 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:55:50.057484 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:55:51.872250 [debug] [MainThread]: Executing "git --help"
+[0m14:55:51.939907 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone             Clone a repository into a new directory\n   init              Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add               Add file contents to the index\n   mv                Move or rename a file, a directory, or a symlink\n   restore           Restore working tree files\n   rm                Remove files from the working tree and from the index\n   sparse-checkout   Initialize and modify the sparse-checkout\n\nexamine the history and state (see also: git help revisions)\n   bisect            Use binary search to find the commit that introduced a bug\n   diff              Show changes between commits, commit and working tree, etc\n   grep              Print lines matching a pattern\n   log               Show commit logs\n   show              Show various types of objects\n   status            Show the working tree status\n\ngrow, mark and tweak your common history\n   branch            List, create, or delete branches\n   commit            Record changes to the repository\n   merge             Join two or more development histories together\n   rebase            Reapply commits on top of another base tip\n   reset             Reset current HEAD to the specified state\n   switch            Switch branches\n   tag               Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch             Download objects and refs from another repository\n   pull              Fetch from and integrate with another repository or a local branch\n   push              Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:55:51.940941 [debug] [MainThread]: STDERR: "b''"
+[0m14:55:51.944953 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018846640370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188466403A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018846640670>]}
+[0m14:55:51.945934 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-10-26 14:56:54.448812 | ea95d7f6-5ea1-44eb-8d96-7e4c5683a227 ==============================
+[0m14:56:54.448812 [info ] [MainThread]: Running with dbt=1.3.0
+[0m14:56:54.449792 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\tkirschke\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m14:56:54.449792 [debug] [MainThread]: Tracking: tracking
+[0m14:56:54.449792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C3EAB0640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C3EAB02B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C3EAB0D30>]}
+[0m14:56:54.464447 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:56:54.471488 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:56:54.478614 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:56:54.483614 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m14:56:55.273412 [debug] [MainThread]: Executing "git --help"
+[0m14:56:55.364440 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone             Clone a repository into a new directory\n   init              Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add               Add file contents to the index\n   mv                Move or rename a file, a directory, or a symlink\n   restore           Restore working tree files\n   rm                Remove files from the working tree and from the index\n   sparse-checkout   Initialize and modify the sparse-checkout\n\nexamine the history and state (see also: git help revisions)\n   bisect            Use binary search to find the commit that introduced a bug\n   diff              Show changes between commits, commit and working tree, etc\n   grep              Print lines matching a pattern\n   log               Show commit logs\n   show              Show various types of objects\n   status            Show the working tree status\n\ngrow, mark and tweak your common history\n   branch            List, create, or delete branches\n   commit            Record changes to the repository\n   merge             Join two or more development histories together\n   rebase            Reapply commits on top of another base tip\n   reset             Reset current HEAD to the specified state\n   switch            Switch branches\n   tag               Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch             Download objects and refs from another repository\n   pull              Fetch from and integrate with another repository or a local branch\n   push              Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:56:55.364440 [debug] [MainThread]: STDERR: "b''"
+[0m14:56:55.369267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C3F84C0A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C3F84C7F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C3F84C5B0>]}
+[0m14:56:55.369764 [debug] [MainThread]: Flushing usage events
