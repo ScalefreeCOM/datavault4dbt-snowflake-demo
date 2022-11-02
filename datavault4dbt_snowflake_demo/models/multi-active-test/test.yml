@@ -5,8 +5,3 @@ sources:
     schema: Source_Data
     tables:
       - name: MA_SAT_TEST_DATA
-
-models:
-  - name: pit_test
-    config:
-      tags: 'pit'
