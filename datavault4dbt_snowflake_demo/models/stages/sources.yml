@@ -13,6 +13,11 @@ sources:
       - name: Partsupp
       - name: Region
       - name: Supplier
+  - name: deltas
+    database: DATAVAULT4DBT_DEMO
+    schema: CORE_SOURCE_DATA
+    tables:
+      - name: delta_orders
 
 models:
   - name: orders_h
