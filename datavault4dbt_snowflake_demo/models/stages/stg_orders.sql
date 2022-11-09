@@ -1,17 +1,17 @@
-{{ config(materialized='view', 
+{{ config(materialized='table', 
             schema='Stages') }}
 
 {%- set yaml_metadata -%}
 source_model:
-    'deltas': 'orders_initial'
+    'TPC-H_SF1': 'Orders'
 hashed_columns: 
     hk_h_orders:
         - o_orderkey
     hk_h_customers:
-        - customer_name
+        - o_custkey
     hk_l_orders_customers:
         - o_orderkey
-        - customer_name
+        - o_custkey
     hd_orders_n_s:
         is_hashdiff: true
         columns:
@@ -25,6 +25,7 @@ hashed_columns:
             - is_highest_priority
             - description
             - legacy_orderkey
+            - customer_name
 derived_columns:
     is_highest_priority:
         value: "CASE WHEN (o_orderpriority = '1-URGENT') THEN true ELSE false END"
@@ -42,7 +43,7 @@ prejoined_columns:
         bk: 'C_Name'
         this_column_name: 'o_custkey'
         ref_column_name: 'c_custkey'
-ldts: "edwLoadDate"
+ldts: "{{ random_ldts() }}"
 rsrc: '!TPC_H_SF1.Orders'
 {%- endset -%}
 
