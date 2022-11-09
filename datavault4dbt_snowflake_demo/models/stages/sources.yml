@@ -17,7 +17,9 @@ sources:
     database: DATAVAULT4DBT_DEMO
     schema: CORE_SOURCE_DATA
     tables:
-      - name: delta_orders
+      - name: orders_source_data
+      - name: orders_delta
+      - name: orders_initial
 
 models:
   - name: orders_h

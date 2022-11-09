@@ -3,15 +3,15 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    'deltas': 'delta_orders'
+    'deltas': 'orders_initial'
 hashed_columns: 
     hk_h_orders:
         - o_orderkey
     hk_h_customers:
-        - o_custkey
+        - customer_name
     hk_l_orders_customers:
         - o_orderkey
-        - o_custkey
+        - customer_name
     hd_orders_n_s:
         is_hashdiff: true
         columns:
@@ -25,7 +25,6 @@ hashed_columns:
             - is_highest_priority
             - description
             - legacy_orderkey
-            - customer_name
 derived_columns:
     is_highest_priority:
         value: "CASE WHEN (o_orderpriority = '1-URGENT') THEN true ELSE false END"
