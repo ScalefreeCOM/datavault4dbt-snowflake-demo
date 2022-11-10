@@ -5,45 +5,45 @@
 source_model:
     'deltas': 'orders_initial'
 hashed_columns: 
-    hk_h_orders:
-        - o_orderkey
-    hk_h_customers:
-        - customer_name
-    hk_l_orders_customers:
-        - o_orderkey
-        - customer_name
-    hd_orders_n_s:
+    hk_:
+        - 
+    hk_:
+        - 
+    hk_:
+        - 
+        - 
+    hd_:
         is_hashdiff: true
         columns:
-            - o_orderstatus
-            - o_totalprice
-            - o_orderdate
-            - o_orderpriority
-            - o_clerk
-            - o_shippriority
-            - o_comment
-            - is_highest_priority
-            - description
-            - legacy_orderkey
+            - 
+            - 
+            - 
+            - 
+            - 
+            - 
+            - 
+            - 
+            - 
+            - 
 derived_columns:
     is_highest_priority:
-        value: "CASE WHEN (o_orderpriority = '1-URGENT') THEN true ELSE false END"
-        datatype: 'BOOLEAN'
-        src_cols_required: 'o_orderpriority'
+        value: 
+        datatype: 
+        src_cols_required: 
     description:
-        value: '!Orders from TPC_H, reference to Customers.'
-        datatype: 'STRING'
+        value: 
+        datatype: 
 missing_columns:
-    legacy_orderkey: 'STRING'
+    legacy_orderkey: 
 prejoined_columns:
     customer_name:
-        src_name: 'TPC-H_SF1'
-        src_table: 'Customer'
-        bk: 'C_Name'
-        this_column_name: 'o_custkey'
-        ref_column_name: 'c_custkey'
-ldts: "edwLoadDate"
-rsrc: '!TPC_H_SF1.Orders'
+        src_name: 
+        src_table: 
+        bk: 
+        this_column_name: 
+        ref_column_name: 
+ldts: 
+rsrc: 
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}
