@@ -1,4 +1,4 @@
--- depends_on: {{ ref('ma_v0_test') }}
+
 {{ config(materialized='view',
           schema='core') }}
 

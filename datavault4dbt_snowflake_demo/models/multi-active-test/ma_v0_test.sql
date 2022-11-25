@@ -1,4 +1,4 @@
--- depends_on: {{ ref('stage_ma_sat_test') }}
+
 {{ config(materialized='incremental',
           schema='core') }}
 
