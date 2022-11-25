@@ -33,6 +33,10 @@ derived_columns:
     description:
         value: '!Orders from TPC_H, reference to Customers.'
         datatype: 'STRING'
+    test:
+        value: "o_orderpriority || o_orderpriority"
+        datatype: 'STRING'
+        src_cols_required: 'o_orderpriority'
 missing_columns:
     legacy_orderkey: 'STRING'
 prejoined_columns:
