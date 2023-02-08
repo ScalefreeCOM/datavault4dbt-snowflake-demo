@@ -1,0 +1,4 @@
+Data_Flow_Name_,Priority,Hub_Identifier,Target_Hub_table_physical_name,Source_Table_Identifier,Source_Table_Physical_Name,Source_Column_Physical_Name,Source_Column_Data_Type,Source_Column_required,Source_Column_Default_Value,Source_Column_Computation,Business_Key_Column_Description,Business_Key_Business_Description,Business_Key_Column_Business_Name,Business_Key_Column_Business_Alias,Business_Key_Column_Acronym_Name,Business_Key_Physical_Name,Target_Column_Sort_Order,Target_Primary_Key_Physical_Name,Target_Data_Type,Last_Seen_Date_Flag,Hard_Rules
+NULL,,H0001,solution_h,SRC0001,dbt_stage.stage_solution,SolutionNumber,STRING,WAHR,,,,,,,,SolutionNumber,1,hk_solution_h,STRING,FALSCH,NULL
+NULL,,H0002,contact_h,SRC0002,dbt_stage.stage_contact,Contact_Key__c,STRING,WAHR,,,,,,,,Contact_Key__c,1,hk_contact_h,STRING,FALSCH,NULL
+NULL,,H0001,solution_h,SRC0001,dbt_stage.stage_solution,TestNumber,STRING,WAHR,,,,,,,,TestNumber,2,hk_solution_h,STRING,FALSCH,NULL

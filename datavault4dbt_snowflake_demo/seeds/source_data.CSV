@@ -1,0 +1,3 @@
+Source_table_identifier,Source_System,Source_Object,Source_Schema_Physical_Name,Source_Table_Physical_Name,Record_Source_Column,Static_Part_of_Record_Source_Column,Load_Date_Column,int_dummy
+SRC0001,SFDC,Solution,dbt_stage,stage_solution,rsrc_file,*/SALESFORCE/06sIPY/Solution/*,edwLoadDate,1
+SRC0002,SFDC,Contact,dbt_stage,stage_contact,rsrc_file,*/SALESFORCE/06sIPY/Contact/*,edwLoadDate,1

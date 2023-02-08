@@ -37,6 +37,10 @@ derived_columns:
         value: "o_orderpriority || o_orderpriority"
         datatype: 'STRING'
         src_cols_required: 'o_orderpriority'
+    orderkey_string: 
+        value: "TO_VARCHAR(o_orderkey)"
+        datatype: 'STRING'
+        src_cols_required: 'o_orderkey'
 missing_columns:
     legacy_orderkey: 'STRING'
 prejoined_columns:

@@ -2,7 +2,13 @@
           schema='Core') }}
 
 {%- set yaml_metadata -%}
-source_models: stg_orders
+source_models: 
+  - name: stg_orders
+    hk_column: hk_h_orders
+    bk_columns: orderkey_string
+  - name: stg_orders
+    hk_column: hk_h_customers
+    bk_columns: customer_name
 hashkey: hk_h_orders
 business_keys: o_orderkey
 {%- endset -%}      

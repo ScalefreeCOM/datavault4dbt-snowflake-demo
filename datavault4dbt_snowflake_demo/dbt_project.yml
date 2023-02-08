@@ -24,7 +24,6 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
@@ -36,3 +35,53 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+seeds:
+  datavault4dbt_snowflake_demo:
+    link_entities:
+      +column_types:
+        link_identifier: varchar(10)
+        target_link_table_physical_name: varchar(100)
+        source_table_identifier: varchar(50)
+        source_column_physical_name: varchar(100)
+        prejoin_table_identifier: varchar(100)
+        prejoin_table_column_name: varchar(100)
+        prejoin_extraction_column_name: varchar(100)
+        prejoin_target_column_alias: varchar(100)
+        hub_primary_key_physical_name: varchar(100)
+        target_column_physical_name: varchar(100)
+        target_column_sort_order: int
+        target_primary_key_physical_name: varchar(100)
+    hub_satellites: 
+      +column_types:
+        satellite_identifier: varchar(100)
+        target_satellite_table_physical_name: varchar(100)
+        source_table_identifier: varchar(100)
+        source_column_physical_name: varchar(100)
+        hub_primary_key_physical_name: varchar(100)
+        target_column_physical_name: varchar(100)
+        target_column_sort_order: int
+    link_satellites: 
+      +column_types:
+        satellite_identifier: varchar(100)
+        target_satellite_table_physical_name: varchar(100)
+        source_table_identifier: varchar(100)
+        source_column_physical_name: varchar(100)
+        link_primary_key_physical_name: varchar(100)
+        target_column_physical_name: varchar(100)
+        target_column_sort_order: int        
+
+
+vars:
+  #Column Aliases
+  datavault4dbt.ldts_alias: 'ldts'
+  datavault4dbt.rsrc_alias: 'rsrc'
+  datavault4dbt.ledts_alias: 'ledts'
+  datavault4dbt.snapshot_trigger_column: 'is_active'
+  datavault4dbt.sdts_alias: 'sdts'
+  datavault4dbt.stg_alias: 'stg'
+  datavault4dbt.is_current_col_alias: 'IS_CURRENT'
+
+  #Hash Configuration
+  datavault4dbt.hash: SHA2
+  datavault4dbt.hash_datatype: BINARY
