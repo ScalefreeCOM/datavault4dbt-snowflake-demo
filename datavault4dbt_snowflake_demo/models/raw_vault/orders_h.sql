@@ -3,14 +3,16 @@
 
 {%- set yaml_metadata -%}
 source_models: 
-  - name: stg_orders
+  stg_orders:
     hk_column: hk_h_orders
     bk_columns: orderkey_string
-  - name: stg_orders
-    hk_column: hk_h_customers
-    bk_columns: customer_name
+    rsrc_static: 'TPC_H_SF1.Order'
+  stg_customers:
+    hk_column: hk_h_customer
+    bk_columns: c_name
+    rsrc_static: 'TPC_H_SF1.Customer'
 hashkey: hk_h_orders
-business_keys: o_orderkey
+business_keys: orderkey_string
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
