@@ -3,11 +3,11 @@
 
 {%- set yaml_metadata -%}
 source_models: 
-    - name: stg_orders
+    stg_orders:
       hk_column: hk_h_orders
       bk_columns: orderkey_string
       rsrc_static: 'TPC_H_SF1.Order'
-    - name: stg_customers
+    stg_customers:
       hk_column: hk_h_customer
       bk_columns: c_name
       rsrc_static: 'TPC_H_SF1.Customer'

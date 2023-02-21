@@ -2,8 +2,7 @@
             schema='Stages') }}
 
 {%- set yaml_metadata -%}
-source_model:
-    'deltas': 'orders_delta'
+source_model: orders_src
 hashed_columns: 
     hk_h_orders:
         - o_orderkey
@@ -19,10 +18,10 @@ hashed_columns:
             - o_totalprice
             - o_orderdate
             - o_orderpriority
-            - o_clerk
             - o_shippriority
             - o_comment
             - is_highest_priority
+            - renamed_attribute
             - description
             - legacy_orderkey
 derived_columns:
@@ -41,6 +40,10 @@ derived_columns:
         value: "TO_VARCHAR(o_orderkey)"
         datatype: 'STRING'
         src_cols_required: 'o_orderkey'
+    renamed_attribute:
+        value: "o_clerk"
+    removed_slash:
+        value: "test/slash"
 missing_columns:
     legacy_orderkey: 'STRING'
 prejoined_columns:
@@ -50,7 +53,7 @@ prejoined_columns:
         bk: 'c_name'
         this_column_name: 'o_custkey'
         ref_column_name: 'c_custkey'
-ldts: 'edwLoadDate'
+ldts: 'GETDATE()'
 rsrc: '!TPC_H_SF1.Orders'
 {%- endset -%}
 
@@ -63,6 +66,6 @@ rsrc: '!TPC_H_SF1.Orders'
                     derived_columns=metadata_dict['derived_columns'],
                     missing_columns=metadata_dict['missing_columns'],
                     prejoined_columns=metadata_dict['prejoined_columns'],
-                    include_source_columns=true) }}
+                    include_source_columns=false) }}
 
                     
