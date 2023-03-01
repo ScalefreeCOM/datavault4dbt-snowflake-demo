@@ -4,7 +4,6 @@
 ref_hub: 'nation_rh'
 ref_satellites: 
     - nation_rs1
-    - nation_p_rs
 historized: 'full'
 {%- endset -%}
 
