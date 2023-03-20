@@ -4,7 +4,8 @@
 ref_hub: 'nation_rh'
 ref_satellites: 
     - nation_rs1
-historized: 'full'
+historized: 'snapshot'
+snapshot_relation: 'snap_v1'
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
