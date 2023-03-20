@@ -1,15 +1,15 @@
-{{ config(materialized='table', 
+{{ config(materialized='view', 
             schema='Stages') }}
 
 {%- set yaml_metadata -%}
 source_model:
     'TPC-H_SF1': 'Orders'
 hashed_columns: 
-    hk_h_orders:
+    hk_orders_h:
         - o_orderkey
-    hk_h_customers:
+    hk_customer_h:
         - o_custkey
-    hk_l_orders_customers:
+    hk_orders_customer_l:
         - o_orderkey
         - o_custkey
     hd_orders_n_s:
@@ -22,18 +22,8 @@ hashed_columns:
             - o_clerk
             - o_shippriority
             - o_comment
-            - is_highest_priority
-            - description
             - legacy_orderkey
             - customer_name
-derived_columns:
-    is_highest_priority:
-        value: "CASE WHEN (o_orderpriority = '1-URGENT') THEN true ELSE false END"
-        datatype: 'BOOLEAN'
-        src_cols_required: 'o_orderpriority'
-    description:
-        value: '!Orders from TPC_H, reference to Customers.'
-        datatype: 'STRING'
 missing_columns:
     legacy_orderkey: 'STRING'
 prejoined_columns:
@@ -43,7 +33,7 @@ prejoined_columns:
         bk: 'C_Name'
         this_column_name: 'o_custkey'
         ref_column_name: 'c_custkey'
-ldts: "{{ random_ldts() }}"
+ldts: "SYSDATE()"
 rsrc: '!TPC_H_SF1.Orders'
 {%- endset -%}
 

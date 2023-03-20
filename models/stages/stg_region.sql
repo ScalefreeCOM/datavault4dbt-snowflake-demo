@@ -3,28 +3,17 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Supplier'
+    'TPC-H_SF1': 'Region'
 hashed_columns: 
-    hk_supplier_h:
-        - s_suppkey
-    hk_nation_h:
-        - s_nationkey
-    hk_supplier_nation_l:
-        - s_suppkey
-        - s_nationkey
-    hd_supplier_p_s:
+    hk_region_h:
+        - r_regionkey
+    hd_region_n_s:
         is_hashdiff: true
         columns:
-            - s_name
-            - s_address
-            - s_phone
-    hd_supplier_n_s:
-        is_hashdiff: true
-        columns:
-            - s_acctbal
-            - s_comment          
+            - r_name
+            - r_comment
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Supplier'
+rsrc: '!TPC_H_SF1.Region'
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}
@@ -33,9 +22,9 @@ rsrc: '!TPC_H_SF1.Supplier'
                     ldts=metadata_dict['ldts'],
                     rsrc=metadata_dict['rsrc'],
                     hashed_columns=metadata_dict['hashed_columns'],
-                    derived_columns=none,
-                    missing_columns=none,
-                    prejoined_columns=none,
+                    derived_columns=metadata_dict['derived_columns'],
+                    missing_columns=metadata_dict['missing_columns'],
+                    prejoined_columns=metadata_dict['prejoined_columns'],
                     include_source_columns=true) }}
 
                     
