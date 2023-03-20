@@ -13,8 +13,6 @@ src_payload:
     - o_clerk
     - o_shippriority
     - o_comment
-    - is_highest_priority
-    - description
     - legacy_orderkey
     - customer_name
 {%- endset -%}      

@@ -2,11 +2,11 @@
           schema='Core') }}
 
 {%- set yaml_metadata -%}
-source_models: stg_orders
-link_hashkey: hk_orders_customers_l
+source_models: stg_customer
+link_hashkey: hk_customer_nation_l
 foreign_hashkeys: 
-    - hk_orders_h
-    - hk_customers_h
+    - hk_customer_h
+    - hk_nation_h
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

@@ -2,13 +2,12 @@
           schema='Core') }}
 
 {%- set yaml_metadata -%}
-source_model: stg_customer
-parent_hashkey: hk_customer_h
-src_hashdiff: hd_customer_p_s
+source_model: stg_nation
+parent_hashkey: hk_nation_h
+src_hashdiff: hd_nation_n_s
 src_payload:
-    - c_name
-    - c_address
-    - c_phone
+    - n_name
+    - n_comment
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

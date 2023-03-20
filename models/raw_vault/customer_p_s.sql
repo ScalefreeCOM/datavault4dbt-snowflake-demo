@@ -3,7 +3,7 @@
 
 {%- set yaml_metadata -%}
 sat_v0: customer_p0_s
-hashkey: hk_h_customer
+hashkey: hk_customer_h
 hashdiff: hd_customer_p_s
 add_is_current_flag: true
 {%- endset -%}      

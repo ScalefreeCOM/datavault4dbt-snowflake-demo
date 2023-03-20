@@ -3,7 +3,7 @@
 
 {%- set yaml_metadata -%}
 source_models: stg_orders
-hashkey: hk_h_orders
+hashkey: hk_orders_h
 business_keys: o_orderkey
 {%- endset -%}      
 
