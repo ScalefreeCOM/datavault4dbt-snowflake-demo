@@ -3,16 +3,16 @@
 
 {%- set yaml_metadata -%}
 source_models: 
-    stg_nation:
-        rsrc_static: 'TPC_H_SF1.Nation'
-    stg_customer:
-        bk_columns: c_nationkey
-        rsrc_static: 'TPC_H_SF1.Customer'
-    stg_supplier:
-        bk_columns: s_nationkey
-        rsrc_static: 'TPC_H_SF1.Supplier'
-hashkey: hk_nation_h
-business_keys: n_nationkey
+    stg_part:
+        rsrc_static: 'TPC_H_SF1.Part'
+    stg_lineitem:
+        bk_columns: l_partkey
+        rsrc_static: 'TPC_H_SF1.LineItem'
+    stg_partsupp:
+        bk_columns: ps_partkey
+        rsrc_static: 'TPC_H_SF1.Partsupp'
+hashkey: hk_part_h
+business_keys: p_partkey
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

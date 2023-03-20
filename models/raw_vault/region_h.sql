@@ -3,16 +3,13 @@
 
 {%- set yaml_metadata -%}
 source_models: 
+    stg_region:
+        rsrc_static: 'TPC_H_SF1.Region'
     stg_nation:
+        bk_columns: n_regionkey
         rsrc_static: 'TPC_H_SF1.Nation'
-    stg_customer:
-        bk_columns: c_nationkey
-        rsrc_static: 'TPC_H_SF1.Customer'
-    stg_supplier:
-        bk_columns: s_nationkey
-        rsrc_static: 'TPC_H_SF1.Supplier'
-hashkey: hk_nation_h
-business_keys: n_nationkey
+hashkey: hk_region_h
+business_keys: r_regionkey
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

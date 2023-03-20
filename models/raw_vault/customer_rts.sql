@@ -2,13 +2,13 @@
           schema='Core') }}
 
 {%- set yaml_metadata -%}
-tracked_hashkey: hk_h_customer
+tracked_hashkey: hk_customer_h
 source_models:
     stg_customers:
         rsrc_static: 'TPC_H_SF1.Customer'
-    stg_suppliers:
-        hk_column: hk_h_supplier
-        rsrc_static: 'TPC_H_SF1.Supplier'
+    stg_orders:
+        hk_column: hk_customer_h
+        rsrc_static: 'TPC_H_SF1.Orders'
 {%- endset -%}    
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}

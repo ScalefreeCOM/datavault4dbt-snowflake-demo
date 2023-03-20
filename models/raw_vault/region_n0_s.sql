@@ -2,19 +2,12 @@
           schema='Core') }}
 
 {%- set yaml_metadata -%}
-source_model: stg_orders
-parent_hashkey: hk_orders_h
-src_hashdiff: hd_orders_n_s
+source_model: stg_region
+parent_hashkey: hk_region_h
+src_hashdiff: hd_region_n_s
 src_payload:
-    - o_orderstatus
-    - o_totalprice
-    - o_orderdate
-    - o_orderpriority
-    - o_clerk
-    - o_shippriority
-    - o_comment
-    - legacy_orderkey
-    - customer_name
+    - r_name
+    - r_comment
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

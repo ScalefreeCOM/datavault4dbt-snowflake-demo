@@ -2,16 +2,18 @@
           schema='Core') }}
 
 {%- set yaml_metadata -%}
-source_model: stg_lineitem
-parent_hashkey: hk_l_lineitem
+source_model: stg_supplier
+parent_hashkey: hk_supplier_h
+src_hashdiff: hd_supplier_p_s
 src_payload:
-    - l_extendedprice
-    - l_discount
-    - l_tax
+    - s_name
+    - s_address
+    - s_phone
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
 
-{{ datavault4dbt.nh_sat(source_model=metadata_dict['source_model'],
+{{ datavault4dbt.sat_v0(source_model=metadata_dict['source_model'],
                      parent_hashkey=metadata_dict['parent_hashkey'],
+                     src_hashdiff=metadata_dict['src_hashdiff'],
                      src_payload=metadata_dict['src_payload']) }}
