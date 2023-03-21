@@ -12,9 +12,9 @@ hashed_columns:
         - l_linenumber
     hk_orders_h:
         - l_orderkey
-    hk_parts_h:
+    hk_part_h:
         - l_partkey
-    hk_suppliers_h:
+    hk_supplier_h:
         - l_suppkey
     hd_lineitem_n_s:
         is_hashdiff: true

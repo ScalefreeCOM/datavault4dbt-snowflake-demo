@@ -3,10 +3,10 @@
 
 {%- set yaml_metadata -%}
 source_models: stg_orders
-link_hashkey: hk_orders_customers_l
+link_hashkey: hk_orders_customer_l
 foreign_hashkeys: 
     - hk_orders_h
-    - hk_customers_h
+    - hk_customer_h
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

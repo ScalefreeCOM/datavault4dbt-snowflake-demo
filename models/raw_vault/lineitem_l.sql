@@ -6,8 +6,8 @@ source_models: stg_lineitem
 link_hashkey: hk_lineitem_l
 foreign_hashkeys: 
     - hk_orders_h
-    - hk_parts_h
-    - hk_suppliers_h
+    - hk_part_h
+    - hk_supplier_h
     - l_linenumber
 {%- endset -%}      
 

@@ -1,0 +1,51 @@
+version: 2
+
+models:     
+  - name: supplier_h
+    columns:
+      - name: hk_supplier_h
+        tests:
+          - unique
+          - not_null    
+  - name: supplier_nation_l
+    columns:
+      - name: hk_supplier_nation_l
+        tests:
+          - unique
+          - not_null     
+      - name: hk_supplier_h
+        tests:
+          - relationships:
+              to: ref('supplier_h')
+              field: hk_supplier_h
+      - name: hk_nation_h
+        tests:
+          - relationships:
+              to: ref('nation_h')
+              field: hk_nation_h              
+  - name: supplier_n0_s
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns: 
+          - hk_supplier_h
+          - ldts    
+    columns:
+      - name: hk_supplier_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('supplier_h')
+              field: hk_supplier_h
+  - name: supplier_p0_s
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns: 
+          - hk_supplier_h
+          - ldts    
+    columns:
+      - name: hk_supplier_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('supplier_h')
+              field: hk_supplier_h                              

@@ -4,7 +4,7 @@
 {%- set yaml_metadata -%}
 tracked_hashkey: hk_customer_h
 source_models:
-    stg_customers:
+    stg_customer:
         rsrc_static: 'TPC_H_SF1.Customer'
     stg_orders:
         hk_column: hk_customer_h

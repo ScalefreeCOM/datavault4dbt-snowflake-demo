@@ -1,0 +1,59 @@
+version: 2
+
+models:     
+  - name: customer_h
+    columns:
+      - name: hk_customer_h
+        tests:
+          - unique
+          - not_null    
+  - name: customer_nation_l
+    columns:
+      - name: hk_customer_nation_l
+        tests:
+          - unique
+          - not_null     
+      - name: hk_customer_h
+        tests:
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h
+      - name: hk_nation_h
+        tests:
+          - relationships:
+              to: ref('nation_h')
+              field: hk_nation_h              
+  - name: customer_n0_s
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns: 
+          - hk_customer_h
+          - ldts    
+    columns:
+      - name: hk_customer_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h
+  - name: customer_p0_s
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns: 
+          - hk_customer_h
+          - ldts    
+    columns:
+      - name: hk_customer_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h      
+  - name: customer_rts 
+    columns:
+      - name: hk_customer_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h                                 

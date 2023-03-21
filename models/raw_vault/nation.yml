@@ -1,0 +1,38 @@
+version: 2
+
+models:     
+  - name: nation_h
+    columns:
+      - name: hk_nation_h
+        tests:
+          - unique
+          - not_null    
+  - name: nation_region_l
+    columns:
+      - name: hk_nation_region_l
+        tests:
+          - unique
+          - not_null     
+      - name: hk_nation_h
+        tests:
+          - relationships:
+              to: ref('nation_h')
+              field: hk_nation_h
+      - name: hk_region_h
+        tests:
+          - relationships:
+              to: ref('region_h')
+              field: hk_region_h              
+  - name: nation_n0_s
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns: 
+          - hk_nation_h
+          - ldts    
+    columns:
+      - name: hk_nation_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('nation_h')
+              field: hk_nation_h
