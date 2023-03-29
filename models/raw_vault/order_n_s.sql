@@ -2,9 +2,9 @@
           schema='Core') }}
 
 {%- set yaml_metadata -%}
-sat_v0: orders_n0_s
-hashkey: hk_orders_h
-hashdiff: hd_orders_n_s
+sat_v0: order_n0_s
+hashkey: hk_order_h
+hashdiff: hd_order_n_s
 add_is_current_flag: true
 {%- endset -%}      
 

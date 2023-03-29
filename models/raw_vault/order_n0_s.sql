@@ -2,9 +2,9 @@
           schema='Core') }}
 
 {%- set yaml_metadata -%}
-source_model: stg_orders
-parent_hashkey: hk_orders_h
-src_hashdiff: hd_orders_n_s
+source_model: stg_order
+parent_hashkey: hk_order_h
+src_hashdiff: hd_order_n_s
 src_payload:
     - o_orderstatus
     - o_totalprice

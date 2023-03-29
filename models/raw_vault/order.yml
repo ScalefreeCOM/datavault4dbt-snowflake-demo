@@ -1,38 +1,38 @@
 version: 2
 
 models:     
-  - name: orders_h
+  - name: order_h
     columns:
-      - name: hk_orders_h
+      - name: hk_order_h
         tests:
           - unique
           - not_null    
-  - name: orders_customer_l
+  - name: order_customer_l
     columns:
-      - name: hk_orders_customer_l
+      - name: hk_order_customer_l
         tests:
           - unique
           - not_null     
-      - name: hk_orders_h
+      - name: hk_order_h
         tests:
           - relationships:
-              to: ref('orders_h')
-              field: hk_orders_h
+              to: ref('order_h')
+              field: hk_order_h
       - name: hk_customer_h
         tests:
           - relationships:
               to: ref('customer_h')
               field: hk_customer_h              
-  - name: orders_n0_s
+  - name: order_n0_s
     tests:
     - dbt_utils.unique_combination_of_columns:
         combination_of_columns: 
-          - hk_orders_h
+          - hk_order_h
           - ldts    
     columns:
-      - name: hk_orders_h
+      - name: hk_order_h
         tests:
           - not_null
           - relationships:
-              to: ref('orders_h')
-              field: hk_orders_h
+              to: ref('order_h')
+              field: hk_order_h

@@ -5,14 +5,14 @@
 source_model:
     'TPC-H_SF1': 'Orders'
 hashed_columns: 
-    hk_orders_h:
+    hk_order_h:
         - o_orderkey
     hk_customer_h:
         - o_custkey
-    hk_orders_customer_l:
+    hk_order_customer_l:
         - o_orderkey
         - o_custkey
-    hd_orders_n_s:
+    hd_order_n_s:
         is_hashdiff: true
         columns:
             - o_orderstatus
