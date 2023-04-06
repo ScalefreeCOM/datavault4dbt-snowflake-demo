@@ -1,15 +1,9 @@
 version: 2
 
 sources:
-  - name: TPC-H_SF1
-    database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH_SF1
+  - name: bikes
+    database: datavault_demo
+    schema: public
     tables:
-      - name: Customer
-      - name: LineItem
-      - name: Nation
-      - name: Orders
-      - name: Part
-      - name: Partsupp
-      - name: Region
-      - name: Supplier
+      - name: transactions_raw
+      - name: customers_raw
