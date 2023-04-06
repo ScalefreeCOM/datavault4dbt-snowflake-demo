@@ -5,7 +5,9 @@
 source_model:
     'bikes': 'customers_raw'
 derived_columns:
-    - "date_of_birth": "dob"
+    date_of_birth:
+        value: "TO_TIMESTAMP(dob, 'YYYY-MM-DD')"
+        datatype: TIMESTAMP
 hashed_columns: 
     hk_customer_h:
         - customer_id

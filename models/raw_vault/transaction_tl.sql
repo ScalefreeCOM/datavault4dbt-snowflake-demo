@@ -9,6 +9,7 @@ foreign_hashkeys:
     - hk_product_h
 payload:
     - transaction_date
+    - transaction_date_ts
     - online_order
     - order_status
     - list_price

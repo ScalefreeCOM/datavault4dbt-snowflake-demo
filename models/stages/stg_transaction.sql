@@ -4,6 +4,10 @@
 {%- set yaml_metadata -%}
 source_model:
     'bikes': 'transactions_raw'
+derived_columns:
+    transaction_date_ts:
+        value: "TO_TIMESTAMP(transaction_date, 'DD/MM/YYYY')"
+        datatype: TIMESTAMP
 hashed_columns: 
     hk_transaction_tl:
         - transaction_id
