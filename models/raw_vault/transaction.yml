@@ -1,0 +1,19 @@
+version: 2
+
+models:     
+  - name: transaction_tl
+    columns:
+      - name: hk_transaction_tl
+        tests:
+          - unique
+          - not_null     
+      - name: hk_product_h
+        tests:
+          - relationships:
+              to: ref('product_h')
+              field: hk_product_h
+      - name: hk_customer_h
+        tests:
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h              

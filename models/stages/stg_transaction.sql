@@ -3,31 +3,24 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    'bikes': 'customers_raw'
-derived_columns:
-    - "date_of_birth": "dob"
+    'bikes': 'transactions_raw'
 hashed_columns: 
+    hk_transaction_tl:
+        - transaction_id
     hk_customer_h:
         - customer_id
-    hd_customer_p_s:
+    hk_product_h:
+        - product_id
+    hd_product_n_s:
         is_hashdiff: true
         columns:
-            - name
-            - date_of_birth
-            - age
-    hd_customer_n_s:
-        is_hashdiff: true
-        columns:
-            - gender
-            - past_3_years_bike_related_purchases
-            - job_title
-            - job_industry_category
-            - wealth_segment
-            - deceased_indicator
-            - owns_car
-            - tenure
+            - brand
+            - product_line
+            - product_class
+            - product_size
+            - product_first_sold_date
 ldts: "SYSDATE()"
-rsrc: '!bikes.Customers'
+rsrc: '!bikes.Transactions'
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}
@@ -36,7 +29,7 @@ rsrc: '!bikes.Customers'
                     ldts=metadata_dict['ldts'],
                     rsrc=metadata_dict['rsrc'],
                     hashed_columns=metadata_dict['hashed_columns'],
-                    derived_columns=metadata_dict['derived_columns'],
+                    derived_columns=none,
                     missing_columns=none,
                     prejoined_columns=none,
                     include_source_columns=true) }}

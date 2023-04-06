@@ -6,9 +6,9 @@ source_model: stg_customer
 parent_hashkey: hk_customer_h
 src_hashdiff: hd_customer_p_s
 src_payload:
-    - c_name
-    - c_address
-    - c_phone
+    - name
+    - date_of_birth
+    - age
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

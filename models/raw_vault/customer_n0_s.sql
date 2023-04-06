@@ -6,9 +6,14 @@ source_model: stg_customer
 parent_hashkey: hk_customer_h
 src_hashdiff: hd_customer_n_s
 src_payload:
-    - c_acctbal
-    - c_mktsegment
-    - c_comment
+    - gender
+    - past_3_years_bike_related_purchases
+    - job_title
+    - job_industry_category
+    - wealth_segment
+    - deceased_indicator
+    - owns_car
+    - tenure
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
