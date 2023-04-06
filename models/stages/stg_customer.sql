@@ -1,5 +1,5 @@
 {{ config(materialized='view', 
-            schema='Stages') }}
+            schema='Stage') }}
 
 {%- set yaml_metadata -%}
 source_model:

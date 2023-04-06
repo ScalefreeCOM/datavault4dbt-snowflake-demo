@@ -4,9 +4,9 @@
 {%- set yaml_metadata -%}
 source_models: 
     stg_customer:
-        rsrc_static: 'bikes.Customers'
+        rsrc_static: '!bikes.Customers'
     stg_transaction:
-        rsrc_static: 'bikes.Transactions'
+        rsrc_static: '!bikes.Transactions'
 hashkey: hk_customer_h
 business_keys: customer_id
 {%- endset -%}      

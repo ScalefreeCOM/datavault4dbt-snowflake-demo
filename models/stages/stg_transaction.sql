@@ -1,5 +1,5 @@
 {{ config(materialized='view', 
-            schema='Stages') }}
+            schema='Stage') }}
 
 {%- set yaml_metadata -%}
 source_model:
@@ -33,7 +33,7 @@ rsrc: '!bikes.Transactions'
                     ldts=metadata_dict['ldts'],
                     rsrc=metadata_dict['rsrc'],
                     hashed_columns=metadata_dict['hashed_columns'],
-                    derived_columns=none,
+                    derived_columns=metadata_dict['derived_columns'],
                     missing_columns=none,
                     prejoined_columns=none,
                     include_source_columns=true) }}
