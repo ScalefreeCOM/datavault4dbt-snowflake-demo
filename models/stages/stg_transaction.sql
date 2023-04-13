@@ -8,6 +8,9 @@ derived_columns:
     transaction_date_ts:
         value: "TO_TIMESTAMP(transaction_date, 'DD/MM/YYYY')"
         datatype: TIMESTAMP
+    standard_cost_number:
+        value: "TRY_TO_NUMBER(standard_cost,'$999,999.9999',10,4)"
+        datatype: NUMBER
 hashed_columns: 
     hk_transaction_tl:
         - transaction_id

@@ -14,6 +14,7 @@ payload:
     - order_status
     - list_price
     - standard_cost
+    - standard_cost_number
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
