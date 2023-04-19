@@ -6,7 +6,7 @@ tracked_hashkey: hk_customer_h
 source_models:
     stg_customer:
         rsrc_static: 'TPC_H_SF1.Customer'
-    stg_orders:
+    stg_order:
         hk_column: hk_customer_h
         rsrc_static: 'TPC_H_SF1.Orders'
 {%- endset -%}    

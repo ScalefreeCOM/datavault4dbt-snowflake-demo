@@ -1,3 +1,2 @@
 packages:
-  - package: ScalefreeCOM/datavault4dbt
-    version: 1.0.11
+  - local: "C:/Users/tkirschke/.vscode/repositories/datavault4dbt/datavault4dbt"

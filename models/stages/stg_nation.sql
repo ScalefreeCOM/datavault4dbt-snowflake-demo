@@ -17,6 +17,10 @@ hashed_columns:
         columns: 
             - n_name
             - n_comment
+derived_columns:
+    test_column:
+        value: '!teststring'
+        datatype: string
 ldts: "SYSDATE()"
 rsrc: '!TPC_H_SF1.Nation'
 {%- endset -%}
