@@ -15,6 +15,7 @@ The TPCH dataset includes a total of 8 source objects. These are:
 - Supplier
 
 ## The Data Vault Model
+![datavault4dbt-snowflake-sample-project](https://user-images.githubusercontent.com/81677440/234200376-2245ddd9-3676-43a9-814d-98a3da8cbfaf.png)
 
 ## Installation
 
