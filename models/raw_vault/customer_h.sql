@@ -5,7 +5,7 @@
 source_models: 
     stg_customer:
         rsrc_static: 'TPC_H_SF1.Customer'
-    stg_orders:
+    stg_order:
         hk_column: hk_customer_h
         bk_columns: o_custkey
         rsrc_static: 'TPC_H_SF1.Orders'
