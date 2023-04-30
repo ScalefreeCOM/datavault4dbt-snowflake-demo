@@ -33,6 +33,15 @@ prejoined_columns:
         bk: 'C_Name'
         this_column_name: 'o_custkey'
         ref_column_name: 'c_custkey'
+    customer_name_ref: 
+        ref_model: 'stg_customer'
+        bk: 'C_Name'
+        this_column_name: 
+            - 'o_custkey'
+            - 'o_custkey'
+        ref_column_name: 
+            - 'c_custkey'
+            - 'c_custkey'
 ldts: "SYSDATE()"
 rsrc: '!TPC_H_SF1.Orders'
 {%- endset -%}
