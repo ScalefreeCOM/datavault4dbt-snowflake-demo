@@ -24,6 +24,11 @@ hashed_columns:
             - c_acctbal
             - c_mktsegment
             - c_comment
+derived_columns:
+    C_COMMENT:
+        value: 'CAST("C_COMMENT" as STRING)'
+        datatype: 'STRING'
+        src_cols_required: 'C_COMMENT'
 ldts: "{{ random_ldts() }}"
 rsrc: '!TPC_H_SF1.Customer'
 {%- endset -%}
@@ -34,7 +39,7 @@ rsrc: '!TPC_H_SF1.Customer'
                     ldts=metadata_dict['ldts'],
                     rsrc=metadata_dict['rsrc'],
                     hashed_columns=metadata_dict['hashed_columns'],
-                    derived_columns=none,
+                    derived_columns=metadata_dict['derived_columns'],
                     missing_columns=none,
                     prejoined_columns=none,
                     include_source_columns=true) }}
