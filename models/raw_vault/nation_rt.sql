@@ -1,11 +1,12 @@
-{{ config(schema='core', materialized='view') }}
+{{ config(schema='core', materialized='incremental') }}
 
 {%- set yaml_metadata -%}
 ref_hub: 'nation_rh'
 ref_satellites: 
-    - nation_rs1
-historized: 'snapshot'
-snapshot_relation: 'snap_v1'
+    nation_rs1:
+        exclude:
+            - N_NAME
+historized: 'full'
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

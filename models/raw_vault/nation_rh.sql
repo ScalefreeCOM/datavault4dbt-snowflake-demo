@@ -2,7 +2,12 @@
           schema='Core') }}
 
 {%- set yaml_metadata -%}
-source_models: stg_nation
+source_models: 
+    stg_nation: 
+        rsrc_static: 'TPC_H_SF1.Nation'
+    stg_customers:
+        ref_keys: C_NATIONKEY
+        rsrc_static: 'TPC_H_SF1.Customer'
 ref_keys: N_NATIONKEY
 {%- endset -%}      
 

@@ -3,16 +3,15 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Nation'
+    'TPC-H_SF1': 'Region'
 hashed_columns:
-    hd_nation_rs:
+    hd_region_rs:
         is_hashdiff: true
         columns:
-            - N_COMMENT
-            - N_NAME
-            - N_REGIONKEY
+            - R_COMMENT
+            - R_NAME
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Nation'
+rsrc: '!TPC_H_SF1.Region'
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}
@@ -25,3 +24,6 @@ rsrc: '!TPC_H_SF1.Nation'
                     missing_columns=none,
                     prejoined_columns=none,
                     include_source_columns=true) }}
+
+                    
+                    
