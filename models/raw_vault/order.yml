@@ -7,9 +7,9 @@ models:
         tests:
           - unique
           - not_null    
-  - name: order_customer_l
+  - name: order_customer_nl
     columns:
-      - name: hk_order_customer_l
+      - name: hk_order_customer_nl
         tests:
           - unique
           - not_null     
@@ -23,16 +23,16 @@ models:
           - relationships:
               to: ref('customer_h')
               field: hk_customer_h              
-  - name: order_n0_s
+  - name: order_customer_n0_s
     tests:
     - dbt_utils.unique_combination_of_columns:
         combination_of_columns: 
-          - hk_order_h
+          - hk_order_customer_nl
           - ldts    
     columns:
-      - name: hk_order_h
+      - name: hk_order_customer_nl
         tests:
           - not_null
           - relationships:
-              to: ref('order_h')
-              field: hk_order_h
+              to: ref('order_customer_nl')
+              field: hk_order_customer_nl

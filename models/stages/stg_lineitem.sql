@@ -5,12 +5,12 @@
 source_model:
     'TPC-H_SF1': 'LineItem'
 hashed_columns: 
-    hk_lineitem_l:
+    hk_lineitem_nl:
         - l_orderkey
         - l_partkey
         - l_suppkey
         - l_linenumber
-    hk_orders_h:
+    hk_order_h:
         - l_orderkey
     hk_part_h:
         - l_partkey

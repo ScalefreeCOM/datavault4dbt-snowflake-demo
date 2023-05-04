@@ -3,7 +3,7 @@
 
 {%- set yaml_metadata -%}
 sat_v0: lineitem_n0_s
-hashkey: hk_lineitem_l
+hashkey: hk_lineitem_nl
 hashdiff: hd_lineitem_n_s
 add_is_current_flag: true
 {%- endset -%}      

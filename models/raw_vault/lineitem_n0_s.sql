@@ -3,18 +3,13 @@
 
 {%- set yaml_metadata -%}
 source_model: stg_lineitem
-parent_hashkey: hk_lineitem_l
+parent_hashkey: hk_lineitem_nl
 src_hashdiff: hd_lineitem_n_s
 src_payload:
-    - l_quantity
-    - l_extendedprice
-    - l_discount
-    - l_tax
     - l_returnflag
     - l_linestatus
     - l_shipdate
     - l_commitdate
-    - l_receiptdate
     - l_shipinstruct
     - l_shipmode
     - l_comment

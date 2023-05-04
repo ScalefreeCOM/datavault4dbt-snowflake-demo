@@ -1,9 +1,9 @@
 version: 2
 
 models:      
-  - name: lineitem_l
+  - name: lineitem_nl
     columns:
-      - name: hk_lineitem_l
+      - name: hk_lineitem_nl
         tests:
           - unique
           - not_null     
@@ -26,12 +26,12 @@ models:
     tests:
     - dbt_utils.unique_combination_of_columns:
         combination_of_columns: 
-          - hk_lineitem_l
+          - hk_lineitem_nl
           - ldts    
     columns:
-      - name: hk_lineitem_l
+      - name: hk_lineitem_nl
         tests:
           - not_null
           - relationships:
-              to: ref('lineitem_l')
-              field: hk_lineitem_l                              
+              to: ref('lineitem_nl')
+              field: hk_lineitem_nl                              

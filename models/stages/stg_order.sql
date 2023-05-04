@@ -9,30 +9,20 @@ hashed_columns:
         - o_orderkey
     hk_customer_h:
         - o_custkey
-    hk_order_customer_l:
+    hk_order_customer_nl:
         - o_orderkey
         - o_custkey
-    hd_order_n_s:
+    hd_order_customer_n_s:
         is_hashdiff: true
         columns:
             - o_orderstatus
-            - o_totalprice
-            - o_orderdate
             - o_orderpriority
             - o_clerk
             - o_shippriority
             - o_comment
             - legacy_orderkey
-            - customer_name
 missing_columns:
     legacy_orderkey: 'STRING'
-prejoined_columns:
-    customer_name:
-        src_name: 'TPC-H_SF1'
-        src_table: 'Customer'
-        bk: 'C_Name'
-        this_column_name: 'o_custkey'
-        ref_column_name: 'c_custkey'
 ldts: "SYSDATE()"
 rsrc: '!TPC_H_SF1.Orders'
 {%- endset -%}
