@@ -1,6 +1,3 @@
-{{ config(materialized='incremental',
-          schema='Core') }}
-
 {%- set yaml_metadata -%}
 source_models: stg_customer
 link_hashkey: hk_customer_nation_l

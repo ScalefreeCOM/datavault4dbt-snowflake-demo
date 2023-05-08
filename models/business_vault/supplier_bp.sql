@@ -1,5 +1,4 @@
 {{ config(materialized='incremental',
-          schema='Core',
           post_hook="{{ datavault4dbt.clean_up_pit('snap_v1') }}") }}
 
 {%- set yaml_metadata -%}

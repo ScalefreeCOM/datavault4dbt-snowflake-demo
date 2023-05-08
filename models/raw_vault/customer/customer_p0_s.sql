@@ -1,14 +1,11 @@
-{{ config(materialized='incremental',
-          schema='Core') }}
-
 {%- set yaml_metadata -%}
 source_model: stg_customer
 parent_hashkey: hk_customer_h
-src_hashdiff: hd_customer_n_s
+src_hashdiff: hd_customer_p_s
 src_payload:
-    - c_acctbal
-    - c_mktsegment
-    - c_comment
+    - c_name
+    - c_address
+    - c_phone
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

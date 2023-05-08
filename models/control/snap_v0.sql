@@ -1,5 +1,5 @@
 {{ config(materialized='incremental',
-          schema='Control') }}
+          schema='control') }}
 
 {%- set yaml_metadata -%}
 start_date: '2015-01-01'

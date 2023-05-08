@@ -1,30 +1,22 @@
-{{ config(materialized='view', 
-            schema='Stages') }}
-
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Orders'
+    'TPC-H_SF1': 'Part'
 hashed_columns: 
-    hk_order_h:
-        - o_orderkey
-    hk_customer_h:
-        - o_custkey
-    hk_order_customer_nl:
-        - o_orderkey
-        - o_custkey
-    hd_order_customer_n_s:
+    hk_part_h:
+        - p_partkey
+    hd_part_n_s:
         is_hashdiff: true
         columns:
-            - o_orderstatus
-            - o_orderpriority
-            - o_clerk
-            - o_shippriority
-            - o_comment
-            - legacy_orderkey
-missing_columns:
-    legacy_orderkey: 'STRING'
+            - p_name
+            - p_mfgr
+            - p_brand
+            - p_type
+            - p_size
+            - p_container
+            - p_retailprice
+            - p_comment
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Orders'
+rsrc: '!TPC_H_SF1.Part'
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}

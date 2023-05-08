@@ -1,10 +1,7 @@
-{{ config(materialized='view',
-          schema='Core') }}
-
 {%- set yaml_metadata -%}
-sat_v0: customer_n0_s
+sat_v0: customer_p0_s
 hashkey: hk_customer_h
-hashdiff: hd_customer_n_s
+hashdiff: hd_customer_p_s
 add_is_current_flag: true
 {%- endset -%}      
 

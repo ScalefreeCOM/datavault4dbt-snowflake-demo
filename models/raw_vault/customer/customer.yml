@@ -7,6 +7,7 @@ models:
         tests:
           - unique
           - not_null    
+          
   - name: customer_nation_l
     columns:
       - name: hk_customer_nation_l
@@ -22,7 +23,8 @@ models:
         tests:
           - relationships:
               to: ref('nation_h')
-              field: hk_nation_h              
+              field: hk_nation_h   
+
   - name: customer_n0_s
     tests:
     - dbt_utils.unique_combination_of_columns:
@@ -36,6 +38,7 @@ models:
           - relationships:
               to: ref('customer_h')
               field: hk_customer_h
+
   - name: customer_p0_s
     tests:
     - dbt_utils.unique_combination_of_columns:
@@ -48,7 +51,8 @@ models:
           - not_null
           - relationships:
               to: ref('customer_h')
-              field: hk_customer_h      
+              field: hk_customer_h   
+                 
   - name: customer_rts 
     columns:
       - name: hk_customer_h

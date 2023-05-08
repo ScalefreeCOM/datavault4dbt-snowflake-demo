@@ -1,19 +1,22 @@
-{{ config(materialized='view', 
-            schema='Stages') }}
-
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Region'
+    'TPC-H_SF1': 'Partsupp'
 hashed_columns: 
-    hk_region_h:
-        - r_regionkey
-    hd_region_n_s:
+    hk_part_h:
+        - ps_partkey
+    hk_supplier_h:
+        - ps_suppkey
+    hk_part_supplier_l:
+        - ps_partkey
+        - ps_suppkey
+    hd_part_supplier_n_s:
         is_hashdiff: true
         columns:
-            - r_name
-            - r_comment
+            - ps_availqty
+            - ps_supplycost
+            - ps_comment
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Region'
+rsrc: '!TPC_H_SF1.Partsupp'
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}

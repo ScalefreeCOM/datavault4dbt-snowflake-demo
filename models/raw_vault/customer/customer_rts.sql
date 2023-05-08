@@ -1,6 +1,3 @@
-{{ config(materialized='incremental',
-          schema='Core') }}
-
 {%- set yaml_metadata -%}
 tracked_hashkey: hk_customer_h
 source_models:

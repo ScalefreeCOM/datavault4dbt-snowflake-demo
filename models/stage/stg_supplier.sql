@@ -1,31 +1,27 @@
-{{ config(materialized='view', 
-            schema='Stages') }}
-
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Customer'
+    'TPC-H_SF1': 'Supplier'
 hashed_columns: 
-    hk_customer_h:
-        - c_custkey
+    hk_supplier_h:
+        - s_suppkey
     hk_nation_h:
-        - c_nationkey
-    hk_customer_nation_l:
-        - c_custkey
-        - c_nationkey
-    hd_customer_p_s:
+        - s_nationkey
+    hk_supplier_nation_l:
+        - s_suppkey
+        - s_nationkey
+    hd_supplier_p_s:
         is_hashdiff: true
         columns:
-            - c_name
-            - c_address
-            - c_phone
-    hd_customer_n_s:
+            - s_name
+            - s_address
+            - s_phone
+    hd_supplier_n_s:
         is_hashdiff: true
         columns:
-            - c_acctbal
-            - c_mktsegment
-            - c_comment
+            - s_acctbal
+            - s_comment          
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Customer'
+rsrc: '!TPC_H_SF1.Supplier'
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}

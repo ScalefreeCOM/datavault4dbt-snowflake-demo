@@ -1,30 +1,35 @@
-{{ config(materialized='view', 
-            schema='Stages') }}
-
 {%- set yaml_metadata -%}
 source_model:
-    'TPC-H_SF1': 'Supplier'
+    'TPC-H_SF1': 'LineItem'
 hashed_columns: 
+    hk_lineitem_nl:
+        - l_orderkey
+        - l_partkey
+        - l_suppkey
+        - l_linenumber
+    hk_order_h:
+        - l_orderkey
+    hk_part_h:
+        - l_partkey
     hk_supplier_h:
-        - s_suppkey
-    hk_nation_h:
-        - s_nationkey
-    hk_supplier_nation_l:
-        - s_suppkey
-        - s_nationkey
-    hd_supplier_p_s:
+        - l_suppkey
+    hd_lineitem_n_s:
         is_hashdiff: true
         columns:
-            - s_name
-            - s_address
-            - s_phone
-    hd_supplier_n_s:
-        is_hashdiff: true
-        columns:
-            - s_acctbal
-            - s_comment          
+            - l_quantity
+            - l_extendedprice
+            - l_discount
+            - l_tax
+            - l_returnflag
+            - l_linestatus
+            - l_shipdate
+            - l_commitdate
+            - l_receiptdate
+            - l_shipinstruct
+            - l_shipmode
+            - l_comment
 ldts: "SYSDATE()"
-rsrc: '!TPC_H_SF1.Supplier'
+rsrc: '!TPC_H_SF1.LineItem'
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}
