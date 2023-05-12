@@ -2,7 +2,16 @@
           schema='Core') }}
 
 {%- set yaml_metadata -%}
-source_models: stg_order
+source_models: 
+    stg_order:
+        link_hk: hk_order_customer_l
+        rsrc_static: 'TPC_H_SF1.Orders'
+    stg_nation:
+        link_hk: hk_nation_region_l
+        fk_columns: 
+            - hk_nation_h
+            - hk_region_h
+        rsrc_static: 'TPC_H_SF1.Nation'
 link_hashkey: hk_order_customer_l
 foreign_hashkeys: 
     - hk_order_h
