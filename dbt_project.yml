@@ -34,5 +34,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   datavault4dbt_snowflake_demo:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    raw_vault:
+      +materialized: incremental 
+    stages:
       +materialized: view

@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: bikes
-    database: datavault_demo
+    database: datavault4dbt_demo
     schema: public
     tables:
       - name: transactions_raw
