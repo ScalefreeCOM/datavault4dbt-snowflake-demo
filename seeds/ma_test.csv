@@ -1,0 +1,6 @@
+hk,ldts,ma_attribute,col_a,col_b
+1,2023-06-01,MA1,col_a1,col_b1
+1,2023-06-01,MA3,col_a1,col_b1
+1,2023-06-02,MA1,col_a1,col_b1
+1,2023-06-02,MA2,,
+1,2023-06-02,MA2,col_a1,col_b1

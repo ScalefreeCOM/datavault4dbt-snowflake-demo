@@ -14,4 +14,5 @@ src_payload:
 
 {{ datavault4dbt.nh_sat(source_model=metadata_dict['source_model'],
                      parent_hashkey=metadata_dict['parent_hashkey'],
-                     src_payload=metadata_dict['src_payload']) }}
+                     src_payload=metadata_dict['src_payload'],
+                     source_is_single_batch=true) }}

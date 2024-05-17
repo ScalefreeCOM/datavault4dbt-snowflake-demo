@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: TPC-H_SF1
     database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH_SF1
+    schema: TPCH_SF1 
     tables:
       - name: Customer
       - name: LineItem
@@ -15,6 +15,11 @@ sources:
       - name: Supplier
 
 models:
+  - name: Customer_D
+    columns:
+      - name: C_Custkey
+        tests:
+          - unique
   - name: orders_h
     columns:
       - name: hk_h_orders

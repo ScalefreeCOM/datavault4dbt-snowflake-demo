@@ -14,4 +14,5 @@ source_models:
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}
 
 {{ datavault4dbt.rec_track_sat(tracked_hashkey=metadata_dict['tracked_hashkey'],
-                                source_models=metadata_dict['source_models']) }}
+                                source_models=metadata_dict['source_models'], 
+                                disable_hwm=false) }}

@@ -1,2 +1,3 @@
 packages:
-  - local: C:\Users\tkirschke\.vscode\repositories\datavault4dbt\datavault4dbt
+  - git: "https://github.com/ScalefreeCOM/datavault4dbt"
+    revision: support_md5_binary

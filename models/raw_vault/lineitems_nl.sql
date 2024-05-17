@@ -28,5 +28,6 @@ payload:
 
 {{ datavault4dbt.nh_link(source_models=metadata_dict['source_models'],
                      link_hashkey=metadata_dict['link_hashkey'],
-                     foreign_hashkeys=metadata_dict['foreign_hashkeys'],
-                     payload=metadata_dict['payload']) }}
+                     payload=metadata_dict['payload'],
+                     disable_hwm=true,
+                     source_is_single_batch=true) }}
