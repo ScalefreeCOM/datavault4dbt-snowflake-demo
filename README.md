@@ -2,7 +2,7 @@
 
 This is a demo dbt project that uses the TPCH dataset to build a Data Vault with datavault4dbt on Snowflake. 
 
-<img src="https://user-images.githubusercontent.com/81677440/195860893-435b5faa-71f1-4e01-969d-3593a808daa8.png" width=100% align=center>
+[<img src="https://user-images.githubusercontent.com/81677440/195860893-435b5faa-71f1-4e01-969d-3593a808daa8.png" width=100% align=center>](https://www.datavault4dbt.com/)
 
 ## The Data
 
@@ -23,13 +23,13 @@ This embedded screenshot is based on a publicly available [dbdocs Documentation]
 
 Check out explanations of the Data Vault model in the wiki!
 
-## Installation
+## Usage
 
 1. Clone this repository to your local machine.
-2. Create a new Virtual Environment (python) and activate it.
-3. Install dbt for Snowflake with   `pip install dbt-snowflake`
-4. If not there already, create a new file called _profiles.yml_ within your local user account folder, e.g. `C:\Users\tkirschke\.dbt\profiles.yml`
-5. Add a new profile by adding this block of code to your _profiles.yml_: 
+2. Create and activate a new Python Virtual Environment.
+3. Install dbt for Snowflake with `pip install dbt-snowflake`.
+4. If not there already, create a new file called `profiles.yml` within your local user account folder, e.g. `C:\Users\username\.dbt\profiles.yml`
+5. Add a new profile by adding this block of code to your `profiles.yml`:
     ``` 
     datavault4dbt_snowflake_demo:
     outputs:
@@ -40,3 +40,6 @@ Check out explanations of the Data Vault model in the wiki!
     To fill out the placeholder, check the [official dbt documentation](https://docs.getdbt.com/reference/warehouse-setups/snowflake-setup#authentication-methods) to find the right authentication method to connect to your Snowflake instance. 
 6. Execute `dbt debug` and ensure that all checks are passed to verify that the connection is established correctly. 
 7. Execute `dbt build` and watch the entire Data Vault model coming to life within your own database!
+
+Sidenote: On execution dbt will attempt to create multiple schemas in your target database, as defined in the `dbt_project.yml`. 
+If this is not desired you can safely remove the `models:`-block, found at the end of the `dbt_project.yml`.
