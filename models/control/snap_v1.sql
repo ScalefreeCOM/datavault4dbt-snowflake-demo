@@ -1,5 +1,4 @@
-{{ config(materialized='view',
-          schema='Control') }}
+{{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
 control_snap_v0: 'snap_v0'

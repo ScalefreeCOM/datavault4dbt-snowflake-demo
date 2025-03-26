@@ -1,5 +1,4 @@
-{{ config(materialized='incremental',
-          schema='Core') }}
+{{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
 source_model: stg_lineitem
