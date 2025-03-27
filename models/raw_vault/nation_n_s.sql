@@ -1,5 +1,4 @@
-{{ config(materialized='view',
-          schema='Core') }}
+{{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
 sat_v0: nation_n0_s
