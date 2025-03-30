@@ -6,11 +6,11 @@ source_models:
     stg_customer:
         rsrc_static: 'TPC_H_SF1.Customer'
     stg_order:
-        hk_column: hk_customer_h
-        bk_columns: o_custkey
+        hk_column: HK_CUSTOMER_H
+        bk_columns: O_CUSTKEY
         rsrc_static: 'TPC_H_SF1.Orders'
-hashkey: hk_customer_h
-business_keys: c_custkey
+hashkey: HK_CUSTOMER_H
+business_keys: C_CUSTKEY
 {%- endset -%}      
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

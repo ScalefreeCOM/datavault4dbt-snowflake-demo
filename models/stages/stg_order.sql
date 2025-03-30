@@ -12,15 +12,6 @@ hashed_columns:
     hk_order_customer_nl:
         - o_orderkey
         - o_custkey
-    hd_order_customer_n_s:
-        is_hashdiff: true
-        columns:
-            - o_orderstatus
-            - o_orderpriority
-            - o_clerk
-            - o_shippriority
-            - o_comment
-            - legacy_orderkey
 missing_columns:
     legacy_orderkey: 'STRING'
 ldts: "SYSDATE()"
