@@ -27,5 +27,3 @@ rsrc: '!TPC_H_SF1.Orders'
 {%- endset -%}
 
 {{ datavault4dbt.stage(yaml_metadata=yaml_metadata) }}
-
-                    

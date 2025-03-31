@@ -16,5 +16,3 @@ rsrc: '!TPC_H_SF1.Region'
 {%- endset -%}
 
 {{ datavault4dbt.stage(yaml_metadata=yaml_metadata) }}
-
-                    

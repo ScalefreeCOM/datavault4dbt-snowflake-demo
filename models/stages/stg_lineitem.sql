@@ -35,5 +35,3 @@ rsrc: '!TPC_H_SF1.LineItem'
 {%- endset -%}
 
 {{ datavault4dbt.stage(yaml_metadata=yaml_metadata) }}
-
-                    
