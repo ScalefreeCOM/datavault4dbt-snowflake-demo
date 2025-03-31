@@ -21,20 +21,9 @@ hashed_columns:
         is_hashdiff: true
         columns:
             - s_acctbal
-            - s_comment          
+            - s_comment
 ldts: "SYSDATE()"
 rsrc: '!TPC_H_SF1.Supplier'
 {%- endset -%}
 
-{%- set metadata_dict = fromyaml(yaml_metadata) -%}
-
-{{ datavault4dbt.stage(source_model=metadata_dict['source_model'],
-                    ldts=metadata_dict['ldts'],
-                    rsrc=metadata_dict['rsrc'],
-                    hashed_columns=metadata_dict['hashed_columns'],
-                    derived_columns=none,
-                    missing_columns=none,
-                    prejoined_columns=none,
-                    include_source_columns=true) }}
-
-                    
+{{ datavault4dbt.stage(yaml_metadata=yaml_metadata) }}
