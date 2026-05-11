@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: part_h
+    columns:
+      - name: hk_part_h
+        tests:
+          - unique
+          - not_null

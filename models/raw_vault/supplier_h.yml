@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: supplier_h
+    columns:
+      - name: hk_supplier_h
+        tests:
+          - unique
+          - not_null

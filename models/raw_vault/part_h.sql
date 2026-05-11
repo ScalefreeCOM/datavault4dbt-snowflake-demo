@@ -14,8 +14,4 @@ hashkey: hk_part_h
 business_keys: p_partkey
 {%- endset -%}      
 
-{% set metadata_dict = fromyaml(yaml_metadata) %}
-
-{{ datavault4dbt.hub(source_models=metadata_dict['source_models'],
-                     hashkey=metadata_dict['hashkey'],
-                     business_keys=metadata_dict['business_keys']) }}
+{{ datavault4dbt.hub(yaml_metadata=yaml_metadata) }}

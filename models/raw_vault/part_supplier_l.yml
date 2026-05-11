@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: part_supplier_l
+    columns:
+      - name: hk_part_supplier_l
+        tests:
+          - unique
+          - not_null
+      - name: hk_part_h
+        tests:
+          - relationships:
+              to: ref('part_h')
+              field: hk_part_h
+      - name: hk_supplier_h
+        tests:
+          - relationships:
+              to: ref('supplier_h')
+              field: hk_supplier_h

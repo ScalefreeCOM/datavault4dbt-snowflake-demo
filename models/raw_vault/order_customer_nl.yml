@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: order_customer_nl
+    columns:
+      - name: hk_order_customer_nl
+        tests:
+          - unique
+          - not_null
+      - name: hk_order_h
+        tests:
+          - relationships:
+              to: ref('order_h')
+              field: hk_order_h
+      - name: hk_customer_h
+        tests:
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h

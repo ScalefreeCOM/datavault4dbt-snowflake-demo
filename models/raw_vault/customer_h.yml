@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: customer_h
+    columns:
+      - name: hk_customer_h
+        tests:
+          - unique
+          - not_null
