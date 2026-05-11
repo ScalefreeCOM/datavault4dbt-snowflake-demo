@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: order_h
+    columns:
+      - name: hk_order_h
+        tests:
+          - unique
+          - not_null

@@ -12,13 +12,4 @@ snapshot_trigger_column: 'is_active'
 dimension_key: 'hk_customer_d'
 {%- endset -%}    
 
-{%- set metadata_dict = fromyaml(yaml_metadata) -%}
-
-{{ datavault4dbt.pit(pit_type=metadata_dict['pit_type'],
-                                tracked_entity=metadata_dict['tracked_entity'],
-                                hashkey=metadata_dict['hashkey'],
-                                sat_names=metadata_dict['sat_names'],
-                                snapshot_relation=metadata_dict['snapshot_relation'],
-                                snapshot_trigger_column=metadata_dict['snapshot_trigger_column'],
-                                dimension_key=metadata_dict['dimension_key'],
-                                custom_rsrc=metadata_dict['custom_rsrc']) }}
+{{ datavault4dbt.pit(yaml_metadata=yaml_metadata) }}

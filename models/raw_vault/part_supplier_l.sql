@@ -8,8 +8,4 @@ foreign_hashkeys:
     - hk_supplier_h
 {%- endset -%}      
 
-{% set metadata_dict = fromyaml(yaml_metadata) %}
-
-{{ datavault4dbt.link(source_models=metadata_dict['source_models'],
-                     link_hashkey=metadata_dict['link_hashkey'],
-                     foreign_hashkeys=metadata_dict['foreign_hashkeys']) }}
+{{ datavault4dbt.link(yaml_metadata=yaml_metadata) }}

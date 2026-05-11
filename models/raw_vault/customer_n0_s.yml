@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: customer_n0_s
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - hk_customer_h
+            - ldts
+    columns:
+      - name: hk_customer_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h

@@ -10,7 +10,4 @@ source_models:
         rsrc_static: 'TPC_H_SF1.Orders'
 {%- endset -%}    
 
-{%- set metadata_dict = fromyaml(yaml_metadata) -%}
-
-{{ datavault4dbt.rec_track_sat(tracked_hashkey=metadata_dict['tracked_hashkey'],
-                                source_models=metadata_dict['source_models']) }}
+{{ datavault4dbt.rec_track_sat(yaml_metadata=yaml_metadata) }}

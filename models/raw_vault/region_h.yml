@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: region_h
+    columns:
+      - name: hk_region_h
+        tests:
+          - unique
+          - not_null

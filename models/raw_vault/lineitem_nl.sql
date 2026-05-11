@@ -16,9 +16,4 @@ payload:
     - l_receiptdate
 {%- endset -%}      
 
-{% set metadata_dict = fromyaml(yaml_metadata) %}
-
-{{ datavault4dbt.nh_link(source_models=metadata_dict['source_models'],
-                     link_hashkey=metadata_dict['link_hashkey'],
-                     foreign_hashkeys=metadata_dict['foreign_hashkeys'],
-                     payload=metadata_dict['payload']) }}
+{{ datavault4dbt.nh_link(yaml_metadata=yaml_metadata) }}

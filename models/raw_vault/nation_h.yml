@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: nation_h
+    columns:
+      - name: hk_nation_h
+        tests:
+          - unique
+          - not_null

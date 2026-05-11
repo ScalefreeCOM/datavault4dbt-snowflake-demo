@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: customer_rts
+    columns:
+      - name: hk_customer_h
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customer_h')
+              field: hk_customer_h

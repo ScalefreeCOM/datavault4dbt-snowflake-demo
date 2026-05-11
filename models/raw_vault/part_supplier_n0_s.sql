@@ -10,9 +10,4 @@ src_payload:
     - ps_comment
 {%- endset -%}      
 
-{% set metadata_dict = fromyaml(yaml_metadata) %}
-
-{{ datavault4dbt.sat_v0(source_model=metadata_dict['source_model'],
-                     parent_hashkey=metadata_dict['parent_hashkey'],
-                     src_hashdiff=metadata_dict['src_hashdiff'],
-                     src_payload=metadata_dict['src_payload']) }}
+{{ datavault4dbt.sat_v0(yaml_metadata=yaml_metadata) }}
