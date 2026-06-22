@@ -17,6 +17,9 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 
+vars:
+  datavault4dbt.timestamp_default_dtype: {"snowflake":"TIMESTAMP_NTZ"}
+
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
@@ -39,3 +42,5 @@ models:
       +schema: core
     stages:
       +schema: stages
+    delta_merge_demo:
+      +schema: delta_merge_demo
