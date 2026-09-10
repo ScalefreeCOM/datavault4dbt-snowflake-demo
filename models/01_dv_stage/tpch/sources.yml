@@ -13,3 +13,8 @@ sources:
       - name: Partsupp
       - name: Region
       - name: Supplier
+  - name: TPC_H_Ext
+    database: USER_SPACES
+    schema: USER_TTA
+    tables:
+      - name: CUSTOMER_ADDRESS__MA_SAMPLE
