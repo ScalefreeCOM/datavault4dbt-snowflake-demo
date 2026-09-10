@@ -31,11 +31,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # dbt will then only use the target schema as defined in the profiles.yml
 models:
   datavault4dbt_snowflake_demo:
-    business_vault:
-      +schema: core
-    control:
-      +schema: control
-    raw_vault:
-      +schema: core
-    stages:
+    01_dv_stage:
       +schema: stages
+    02_raw_vault:
+      +schema: core
+    03_business_vault:
+      +schema: core
