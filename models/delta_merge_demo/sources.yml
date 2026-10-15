@@ -1,0 +1,15 @@
+version: 2
+sources:
+  - name: SOURCE_TEST
+    database: user_spaces
+    schema: user_mfinger
+    config:
+      loaded_at_field: ldts
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+    tables:
+      - name: source1
+      - name: source2
+      - name: source3
